@@ -1,0 +1,18 @@
+{
+	"manifest_version": 3,
+	"name": "HelpMeOut",
+	"description": "Screen Recorder Extension",
+	"version": "1.0",
+	"action": {
+		"default_popup": "index.html",
+		"default_icon": "icon.png"
+	},
+	"permissions": ["scripting", "tabs", "activeTab"],
+	"host_permissions": ["http://*/*", "https://*/*"],
+	"icons": {
+		"32": "icon.png"
+	},
+	"background": {
+		"service_worker": "background.js"
+	}
+}
