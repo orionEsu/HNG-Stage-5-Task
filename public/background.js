@@ -28,6 +28,21 @@ chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
 		}
 
 		// Now you have the buffer, you can send it to an endpoint
-		// sendBufferToEndpoint(buffer);
+
+		// Prepare the request
+		fetch('https://example.com/your-endpoint', {
+			method: 'POST',
+			body: buffer,
+			headers: {
+				'Content-Type': 'application/octet-stream',
+			},
+		})
+			.then((response) => response.json())
+			.then((data) => {
+				console.log('Response from endpoint:', data);
+			})
+			.catch((error) => {
+				console.error('Error sending buffer:', error);
+			});
 	}
 });
