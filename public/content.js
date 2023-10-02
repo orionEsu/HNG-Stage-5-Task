@@ -1,18 +1,14 @@
 /* eslint-disable no-undef */
 
-// Polyfill for the Buffer object.
-// if (!window.Buffer) {
-//   window.Buffer = require('buffer');
-// }
-
 var recorder = null;
 function onAccessApproved(stream) {
 	recorder = new MediaRecorder(stream);
 
-	recorder.start();
+	recorder.start(2000);
 
 	recorder.onstop = function () {
 		stream.getTracks().forEach(function (track) {
+			console.log(track);
 			if (track.readyState === 'live') {
 				track.stop();
 			}

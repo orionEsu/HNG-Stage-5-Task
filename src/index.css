@@ -100,7 +100,7 @@ button {
 }
 
 .btn--start {
-	/* margin-top: 10px; */
+	margin-bottom: 10px;
 	border-radius: 12px;
 	background-color: #120b48;
 	padding: 16px;
